@@ -1,0 +1,28 @@
+
+<ion-header>
+		<ion-navbar>
+			<ion-title>
+				TO DO
+			</ion-title>
+		</ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-item>
+			<button ion-button (click) = "add()" item-left>
+				<ion-icon name="add"></ion-icon>
+			</button>
+		<ion-input [(ngModel)] = "todo" placeholder = "What To Do" type  = "text">
+		</ion-input>
+	</ion-item>
+	<ion-list *ngFor = "let itemsList of todos">
+		<ion-item>
+			{{itemsList}}
+			<button ion-button color = "danger" (click) = "delete(itemsList)" item-right>
+			<ion-icon name = "trash"> </ion-icon>
+			</button>
+			<button ion-button color = "blue" (click) = "edit(itemsList)" name = "edits"  item-right>
+			<ion-icon name = "create"> </ion-icon>
+			</button>
+		</ion-item>
+	</ion-list>
+</ion-content>
